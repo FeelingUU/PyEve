@@ -96,5 +96,9 @@ def _0006():
 
     pass
 
+def _0007():
+
+    pass
+
 if __name__ == '__main__':
     _0006()
