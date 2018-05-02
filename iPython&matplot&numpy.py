@@ -10,7 +10,10 @@ def test_drawFunc():
     plt.plot(x, y)
     plt.show()
 
+def test_ndarray():
+    print(np.array([[1,23,4,5],[2,2]]))
+
 
 
 if __name__ == '__main__':
-    test_drawFunc()
+    test_ndarray()
