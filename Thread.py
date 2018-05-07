@@ -15,6 +15,6 @@ def test_thread():
         print(e)
 
 if __name__ == '__main__':
-    test_thread()
-    file
+    test_thread();
+    
 
