@@ -13,9 +13,8 @@ def test_thread():
             i.join()
     except BaseException as e:
         print(e)
-        pass
 
 if __name__ == '__main__':
-    test_thread()
-    file()
+    test_thread();
+    pass
 
