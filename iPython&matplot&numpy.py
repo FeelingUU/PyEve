@@ -25,12 +25,23 @@ if __name__ == '__main__':
     # print(a.transpose(2,0,1))
 
 
-    a = np.arange(24).reshape(2,3,4)
+    # a = np.arange(24).reshape(2,3,4)
+    # print(a)
+    # print("---------------------")
+    # print(np.rollaxis(a,1,0))
+    # print("---------------------")
+    # print(np.swapaxes(a,1,0))
 
+
+    # a = np.array([[1],[2],[3]])
+    # b = np.array([1,2,3])
+    # c = np.broadcast(a,b)
+    # print(c.shape)
+
+
+    a = np.arange(12).reshape(1,1,1,12)
     print(a)
-    print("---------------------")
-    print(np.rollaxis(a,1,0))
-    print("---------------------")
-    print(np.swapaxes(a,1,0))
+    print("---------")
+    print(np.squeeze(a))
 
     pass
