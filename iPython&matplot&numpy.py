@@ -61,9 +61,46 @@ if __name__ == '__main__':
 
     # print(np.invert(-13))
     # print(np.invert(242))
-    print(np.left_shift(15,2))
+    # print(np.left_shift(15,2))
 
-    print(np.char.add("aaa"," aaa"))
-    print(np.char.add(["aaa"," aaa"],['dsd ',u'都是']))
+    # print(np.char.add(["aaa"],[" aaa"]))
+    # print(np.char.add(["aaa"," aaa"],['dsd ',u'都是']))
+    # print(np.char.multiply('hey ',3))
+    # print('hey '*3)
+    # print(np.char.center('dadasdf',14,fillchar="*"))
+    # print(np.char.capitalize('dsad,asda'))
+    # print(np.char.title('1dsad.asda'))
+    # print(np.char.lower(['wDSADS','DASDASD']))
+    # print(np.char.split('sds s,dsd'))
+    # print(np.char.split('sds s,dsd',sep=","))
+    # print(str.strip('epweweeq','eq'))
+    # print('das '.strip())
+    # print(np.char.join('-!','asdasd'))
+    # print(np.char.join(['-',':'],['12e22','asdasd']))
+    # print(np.char.decode(b'sdasdasd','utf-8'))
+
+    # print(np.sin(np.array([30,60,45])*np.pi/180))
+    # print(np.cos(30*np.pi/180))
+    # print(np.tan(30*np.pi/180))
+    # print(np.tan(60*np.pi/180))
+    #
+    # print(np.arcsin(0.5)*180/np.pi)
+    # print(np.around(9.0,decimals=0))
+    # print(np.ceil(1.1))
+
+    # a = np.array([[1,2,3],[4,4,4]])
+    # b = np.array([1,1,4])
+    #
+    # print(np.add(a,b))
+    # print(np.subtract(a,b))
+    # print(np.multiply(a,b))
+    # print(np.divide(a,b))
+
+    print(np.reciprocal([2.0,3.0]))
+    print(np.power(np.array([1,2,3]),[2,3,4]))
+
+    print(np.mod(np.array([1,2,3]),[1,2,4]))
+    print(np.remainder(np.array([1,2,3]),2))
+    print(type(1+2j))
 
     pass
