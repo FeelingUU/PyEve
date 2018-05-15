@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 
 def test_drawFunc():
-    x = np.arange(-5, 5, 0.1)
-    y = np.sin(x)
+    x = np.arange(-10, 5, 0.1)
+    y = np.arcsin(x)
     plt.plot(x, y)
     plt.show()
 
@@ -96,11 +96,17 @@ if __name__ == '__main__':
     # print(np.multiply(a,b))
     # print(np.divide(a,b))
 
-    print(np.reciprocal([2.0,3.0]))
-    print(np.power(np.array([1,2,3]),[2,3,4]))
+    # print(np.reciprocal([2.0,3.0]))
+    # print(np.power(np.array([1,2,3]),[2,3,4]))
+    #
+    # print(np.mod(np.array([1,2,3]),[1,2,4]))
+    # print(np.remainder(np.array([1,2,3]),2))
+    a = -2-0j
+    print(np.angle(a,deg=True))
+    print(np.amax([[4,2,1],[22,23,54],[0,44,33]],axis=0))
+    print(np.maximum([1,23,3],[2,3,4]))
 
-    print(np.mod(np.array([1,2,3]),[1,2,4]))
-    print(np.remainder(np.array([1,2,3]),2))
-    print(type(1+2j))
+    b = np.array([[1,2,3,4],[2,2,2,2]])
+    print(b.ndim)
 
     pass
