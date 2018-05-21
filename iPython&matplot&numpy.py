@@ -1,4 +1,4 @@
-#-*-coding:utf-8-*-
+# -*-coding:utf-8-*-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,8 +10,10 @@ def test_drawFunc():
     plt.plot(x, y)
     plt.show()
 
+
 def test_ndarray():
-    print(np.array([[1,23,4,5],[2,2]]))
+    print(np.array([[1, 23, 4, 5], [2, 2]]))
+
 
 if __name__ == '__main__':
     # a = np.arange(12).reshape([2,2,3])
@@ -24,7 +26,6 @@ if __name__ == '__main__':
     # print("---------------------")
     # print(a.transpose(2,0,1))
 
-
     # a = np.arange(24).reshape(2,3,4)
     # print(a)
     # print("---------------------")
@@ -32,12 +33,10 @@ if __name__ == '__main__':
     # print("---------------------")
     # print(np.swapaxes(a,1,0))
 
-
     # a = np.array([[1],[2],[3]])
     # b = np.array([1,2,3])
     # c = np.broadcast(a,b)
     # print(c.shape)
-
 
     # a = np.arange(12).reshape(1,3,4)
     # b = np.arange(13,25).reshape(1,3,4)
@@ -101,12 +100,17 @@ if __name__ == '__main__':
     #
     # print(np.mod(np.array([1,2,3]),[1,2,4]))
     # print(np.remainder(np.array([1,2,3]),2))
-    a = -2-0j
-    print(np.angle(a,deg=True))
-    print(np.amax([[4,2,1],[22,23,54],[0,44,33]],axis=0))
-    print(np.maximum([1,23,3],[2,3,4]))
 
-    b = np.array([[1,2,3,4],[2,2,2,2]])
-    print(b.ndim)
+
+    # a = -2 - 0j
+    # print(np.angle(a, deg=True))
+    # print(np.amax([[4, 2, 1], [22, 23, 54], [0, 44, 33]], axis=0))
+    # print(np.maximum([1, 23, 3], [2, 3, 4]))
+
+    print('--------------------')
+    b = np.array([[[1, 2], [3, 4]], [[2, 2], [2, 2]]])
+    print(b)
+    # print(np.amax(b,2))
+    print(np.ptp(b,axis=0))
 
     pass
