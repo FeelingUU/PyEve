@@ -101,16 +101,40 @@ if __name__ == '__main__':
     # print(np.mod(np.array([1,2,3]),[1,2,4]))
     # print(np.remainder(np.array([1,2,3]),2))
 
-
     # a = -2 - 0j
     # print(np.angle(a, deg=True))
     # print(np.amax([[4, 2, 1], [22, 23, 54], [0, 44, 33]], axis=0))
     # print(np.maximum([1, 23, 3], [2, 3, 4]))
 
     print('--------------------')
-    b = np.array([[[1, 2], [3, 4]], [[2, 2], [2, 2]]])
-    print(b)
-    # print(np.amax(b,2))
-    print(np.ptp(b,axis=0))
 
+    # print(np.amax(b,2))
+    # print(np.ptp(b,axis=0))
+    # print(np.percentile(b, 50, axis=2))
+    # print(np.percentile(b, 60, axis=2))
+    # print(np.percentile(a,70))
+    # print(np.median(b))
+    # print(np.mean(b,axis=2))
+    # print(np.average(b,axis=2,weights=b))
+    # print(np.var(a))
+    # print(np.std(a))
+
+    b = np.array([[[1, 2, 3, 4], [3, 4, 30, 40]], [[1.5, 2, 4, 3], [1, 2, 6, 10]]])
+    a = np.array([1, 3, 7, 12, 10])
+    c = np.array([16, 17, 21, 32, 26])
+
+    # print(np.sort(b,axis=2))
+    # print(b)
+    # print('--------------------')
+    # print(np.sort(b,axis=2,kind='quicksort'))
+    # print('--------------------')
+    # print(np.sort(b,axis=2,kind='mergesort'))
+    print(np.argsort(a))
+    print(np.lexsort((c,a)))
+    print([str(a[i])+" "+str(c[i]) for i in np.lexsort((c,a))])
+
+    print(np.argmax(a))
+    # print(np.nonzero(b))
+    print(np.where(a>3))
+    print(np.extract(a>1,a))
     pass
