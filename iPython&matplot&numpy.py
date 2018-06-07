@@ -2,20 +2,16 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import numpy.matlib
+import os
 
-
-def test_drawFunc():
-    x = np.arange(-10, 5, 0.1)
-    y = np.arcsin(x)
-    plt.plot(x, y)
-    plt.show()
 
 
 def test_ndarray():
     print(np.array([[1, 23, 4, 5], [2, 2]]))
 
 
-if __name__ == '__main__':
+def test_numpy():
     # a = np.arange(12).reshape([2,2,3])
     # print(a.shape)
     # print(a)
@@ -119,22 +115,80 @@ if __name__ == '__main__':
     # print(np.var(a))
     # print(np.std(a))
 
-    b = np.array([[[1, 2, 3, 4], [3, 4, 30, 40]], [[1.5, 2, 4, 3], [1, 2, 6, 10]]])
-    a = np.array([1, 3, 7, 12, 10])
-    c = np.array([16, 17, 21, 32, 26])
-
+    # b = np.array([[[1, 2, 3, 4], [3, 4, 30, 40]], [[1.5, 2, 4, 3], [1, 2, 6, 10]]])
+    # a = np.array([1, 3, 7, 12, 10])
+    # c = np.array([16, 17, 21, 32, 26])
+    # d = a.copy()
+    # a[0] = 1112
     # print(np.sort(b,axis=2))
     # print(b)
     # print('--------------------')
     # print(np.sort(b,axis=2,kind='quicksort'))
     # print('--------------------')
     # print(np.sort(b,axis=2,kind='mergesort'))
-    print(np.argsort(a))
-    print(np.lexsort((c,a)))
-    print([str(a[i])+" "+str(c[i]) for i in np.lexsort((c,a))])
+    # print(np.argsort(a))
+    # print(np.lexsort((c,a)))
+    # print([str(a[i])+" "+str(c[i]) for i in np.lexsort((c,a))])
+    #
+    # print(np.argmax(a))
+    # # print(np.nonzero(b))
+    # print(np.where(a>3))
+    # print(np.extract(a>1,a))
+    # a.byteswap()
+    # print(id(a))
+    # print(id(d))
+    # print(a)
+    # print(d)
 
-    print(np.argmax(a))
-    # print(np.nonzero(b))
-    print(np.where(a>3))
-    print(np.extract(a>1,a))
+    # print(np.matlib.empty((3,3)))
+    # print(np.matlib.zeros((3,3)))
+    # print(np.matlib.ones((3,3)))
+    # print(np.matlib.eye(n=3,M=3,k=1))
+    # print(np.matlib.identity(5))
+    # print(np.matlib.rand(3,3))
+
+    a = np.array([[1, 3, 4], [12, 10, 0], [12, 10, 1]])
+    b = np.array([[2, 4], [1, 2]])
+    c = np.array([1, 1, 3])
+
+    # print(np.dot(a,b))
+    # print(np.vdot(a,b))
+    # print(np.inner(a,b))
+    # print(np.matmul(a,b))
+    print(np.linalg.det(a))
+    print(np.linalg.solve(a, c))
+    print(np.dot(np.linalg.inv(a), a))
+
+
+def test_drawFunc():
+    # x = np.arange(0, 10, 0.5)
+    # # y = np.sin(x)
+    # y1 = x  + 1
+    # y2 = 10*x
+    # plt.subplot(2,1,1)
+    # plt.plot(x, y1,"|",color='red')
+    # plt.subplot(2, 1, 2)
+    # plt.plot(x, y2,"|",color='red')
+    # plt.show()
+
+    x = [5, 8, 11]
+    y = [12, 16, 6]
+    x2 = [6, 9, 12]
+    y2 = [6, 15, 7]
+    plt.bar(x, y, align='center')
+    plt.bar(x2, y2, color='g', align='center')
+    plt.title('Bar graph')
+    plt.ylabel('Y axis')
+    plt.xlabel('X axis')
+    plt.show()
+
+def test_ddd():
+    iu = plt.imread(os.path.join(os.path.expanduser("~"), 'Desktop') + r'\20150.jpeg')
+    print(iu.shape)
+    iu2 = iu[:,::-1]
+    plt.imshow(iu2)
+    plt.show()
+if __name__ == '__main__':
+    test_ddd()
+
     pass
