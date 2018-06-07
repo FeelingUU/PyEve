@@ -183,12 +183,30 @@ def test_drawFunc():
     plt.show()
 
 def test_ddd():
-    iu = plt.imread(os.path.join(os.path.expanduser("~"), 'Desktop') + r'\20150.jpeg')
+    iu = plt.imread(os.path.join(os.path.expanduser("~"), 'Desktop') + r'/20150.jpeg')
     print(iu.shape)
     iu2 = iu[:,::-1]
     plt.imshow(iu2)
     plt.show()
-if __name__ == '__main__':
-    test_ddd()
 
+
+def test_fft():
+    from numpy.fft import fft,ifft
+    from PIL import Image
+
+    cp = Image.open('C:/Users/Am/Desktop/chuanpu.jpg')
+    cp_data = np.fromstring(cp.tobytes(),dtype=np.int8)
+    cp_fft = fft(cp_data)
+
+    cp_fft_where = np.where(np.abs(cp_fft) < 1e5, 0, cp_fft)
+    cp_ifft_where = ifft(cp_fft_where)
+    cp_new = Image.frombytes(data=np.int8(cp_ifft_where.real),size=cp.size,mode=cp.mode)
+    cp_new.show()
+
+
+    pass
+
+
+if __name__ == '__main__':
+    test_fft()
     pass
