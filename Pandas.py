@@ -4,10 +4,16 @@ import numpy as np
 
 
 def test_pandas():
-    df = DataFrame({'height': [1, 2, 3, 4], 'sex': [0, np.nan, 2, 2], 'age': [1, 1, 1, 1]})
+    df = DataFrame({'height': [1, 2, 3, 4], 'sex': [0, 2, 0, 2], 'age': [1, 1, 1, 0]})
     df.loc[0] = [0, 0, 0]
     print(df)
-    print(df[df.isnull().any(axis=1)])
+    print(df.groupby(['age','sex']).sum())
+
+    # print(df[df.isnull().any(axis=1)])
+    # print(df.mean(1))
+    # print(df.sum(1))
+    # print(df.std(1))
+    # print(df.min(1))
 
     # print(df.mean(0))
     # print(df.fillna(0))
@@ -42,13 +48,30 @@ def test_DataFrame():
     #                 columns=['语文', '数学', '英语'],
     #                 index=pd.MultiIndex.from_tuples(
     #                     (('a','1'),('a','2'),('b','1'),('b','2'),('c','1'),('c','2'))))
-    df4 = DataFrame(np.random.randint(0, 100, size=(6, 3)),
-                    columns=pd.MultiIndex.from_product([['语文', '数学', '英语']]),
-                    index=pd.MultiIndex.from_product(
-                        [['andy', 'john', 'jenney'], ['1', '2']]))
-    df4.sort_index(inplace=True)
-    print(df4)
-    print(df4.loc["andy":"john"])
+    # df4 = DataFrame(np.random.randint(0, 100, size=(6, 3)),
+    #                 columns=pd.MultiIndex.from_product([['语文', '数学', '英语']]),
+    #                 index=pd.MultiIndex.from_product(
+    #                     [['andy', 'john', 'jenney'], ['1', '2']]))
+    # df4.sort_index(inplace=True)
+    #
+    # df5 = pd.DataFrame({'A': ['one', 'one', 'two', 'three'] * 3,
+    #                    'B': ['a', 'b', 'c'] * 4,
+    #                    'C': ['foo', 'foo', 'foo', 'bar', 'bar', 'bar'] * 2,
+    #                    'D': np.random.randn(12),
+    #                    'E': np.random.randn(12)})
+    # print(df5)
+    # print('-----------------')
+    # print(pd.pivot_table(df5, values='D', index=['A', 'B'], columns=['C']))
+    # print(pd.pivot_table(df5, values='D', index=['A', 'B']))
+
+    # index = pd.date_range('2018-01-01 23:20:01',periods=5,freq='S')
+    # df6 = DataFrame(np.random.randint(0,20,size=(5,5)),index=index)
+
+    # df7 = pd.DataFrame({"id": [1, 2, 3, 4, 5, 6], "raw_grade": ['a', 'b', 'b', 'a', 'a', 'e']})
+    # print(df7)
+
+    if Series([False, True, False]) is None:
+        print('empty')
 
 
 if __name__ == '__main__':
