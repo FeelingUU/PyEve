@@ -160,28 +160,6 @@ def test_numpy():
     print(np.dot(np.linalg.inv(a), a))
 
 
-def test_drawFunc():
-    # x = np.arange(0, 10, 0.5)
-    # # y = np.sin(x)
-    # y1 = x  + 1
-    # y2 = 10*x
-    # plt.subplot(2,1,1)
-    # plt.plot(x, y1,"|",color='red')
-    # plt.subplot(2, 1, 2)
-    # plt.plot(x, y2,"|",color='red')
-    # plt.show()
-
-    x = [5, 8, 11]
-    y = [12, 16, 6]
-    x2 = [6, 9, 12]
-    y2 = [6, 15, 7]
-    plt.bar(x, y, align='center')
-    plt.bar(x2, y2, color='g', align='center')
-    plt.title('Bar graph')
-    plt.ylabel('Y axis')
-    plt.xlabel('X axis')
-    plt.show()
-
 def test_ddd():
     iu = plt.imread(os.path.join(os.path.expanduser("~"), 'Desktop') + r'/20150.jpeg')
     print(iu.shape)
@@ -206,7 +184,39 @@ def test_fft():
 
     pass
 
+def test_drawFunc():
+    x = np.arange(-10, 10, 0.01)
+    # y = np.sin(x)
+    # y1 = x  + np.square(x) + np.sqrt(x**3)
+    y1 = 1/(1+np.power(np.e,-x))
+    # y2 = 10*x
+    # plt.subplot(2,1,1)
+    # plt.plot(x, y1,"|",color='red')
+    # plt.subplot(2, 1, 2)
+    # plt.plot(x, y2,"|",color='red')
+    # plt.show()
+
+    plt.figure()
+    plt.plot(x,y1)
+    # plt.figure()
+    # plt.plot(x, y1,color='red',linewidth = 2.0,linestyle='--')
+    # plt.plot(x, y2)
+    plt.show()
+
+
+    # 柱状图
+    # x = [5, 8, 11]
+    # y = [12, 16, 6]
+    # x2 = [6, 9, 12]
+    # y2 = [6, 15, 7]
+    # plt.bar(x, y, align='center')
+    # plt.bar(x2, y2, color='g', align='center')
+    # plt.title('Bar graph')
+    # plt.ylabel('Y axis')
+    # plt.xlabel('X axis')
+    # plt.show()
+
 
 if __name__ == '__main__':
-    test_fft()
+    test_drawFunc()
     pass

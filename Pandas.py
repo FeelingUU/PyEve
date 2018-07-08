@@ -7,7 +7,7 @@ def test_pandas():
     df = DataFrame({'height': [1, 2, 3, 4], 'sex': [0, 2, 0, 2], 'age': [1, 1, 1, 0]})
     df.loc[0] = [0, 0, 0]
     print(df)
-    print(df.groupby(['age','sex']).sum())
+    print(df.groupby(['age', 'sex']).sum())
 
     # print(df[df.isnull().any(axis=1)])
     # print(df.mean(1))
@@ -67,12 +67,41 @@ def test_DataFrame():
     # index = pd.date_range('2018-01-01 23:20:01',periods=5,freq='S')
     # df6 = DataFrame(np.random.randint(0,20,size=(5,5)),index=index)
 
-    # df7 = pd.DataFrame({"id": [1, 2, 3, 4, 5, 6], "raw_grade": ['a', 'b', 'b', 'a', 'a', 'e']})
-    # print(df7)
+    df7 = pd.DataFrame({"id": [1, 2, 3, 4, 5, 6], "raw_grade": ['e', 'e', 'b', 'a', 'a', 'e'],'name':[1,2,3,4,5,6]},
+                       index=['a', 'b', 'c', 'd', 'e', 'f'],
+                       columns=["id", "raw_grade","name"])
+    df8 = pd.DataFrame({"id": [1, 2, 3, 4, 5, 6], "raw_grades": ['aA', 'bD', 'bD', 'aD', 'aD', 'eD'],'name':[1,2,3,4,5,6]},
+                       index=['C', 'D', 'e', 'f', 'g', 'h'],
+                       columns=["id", "raw_grades","name"])
+    # df7.index = ['A','B','C','D','E','F']
+    # df7['raw_grades'] = df8.id
+    # df7.loc['G'] = [7,'qq',np.nan]
 
-    if Series([False, True, False]) is None:
-        print('empty')
+    print(df7)
+    print(df8)
+    # print(pd.concat([df7,df8],axis=1,join_axes=[df7.index]))
+    # print(pd.concat([df7,df8],axis=1,join_axes=[df8.index]))
+    print(pd.merge(df7,df8,on='id'))
 
+
+
+def test_csv():
+    data = pd.read_csv('E:/2016.csv', encoding='utf-8')
+    print(data)
+    pass
+
+
+def test_plt():
+    import matplotlib.pyplot as plt
+    df8 = pd.DataFrame(
+        {"id": [1, 2, 3, 4, 5, 6], "raw_grades": [33, 22, 1, 32, 22, 111], 'name': [1, 2, 3, 4, 5, 6]},
+        index=[2,3,4,5,6,7],
+        columns=["id", "raw_grades", "name"])
+    df8.plot()
+    plt.show()
+    pass
 
 if __name__ == '__main__':
-    test_DataFrame()
+    test_plt()
+
+
